@@ -1,14 +1,3 @@
-import 'dart:convert';
-
-List<ExerciesModel> exericesModelFromJson(String str) {
-  return List<ExerciesModel>.from(
-      json.decode(str).map((x) => ExerciesModel.fromJson(x)));
-}
-
-String exericesModelToJson(List<ExerciesModel> data) {
-  return json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-}
-
 class ExerciesModel {
   ExerciesModel({
     required this.name,

@@ -33,7 +33,8 @@ class ApiServices {
       return {'status': "-1", 'text': "İnternet bağlantınızı kontrol ediniz."};
     } else if (_responseBody != "0") {
       if (_responseBody.isNotEmpty) {
-        return exericesModelFromJson(_responseBody);
+        return List<ExerciesModel>.from(
+            json.decode(_responseBody).map((x) => ExerciesModel.fromJson(x)));
       }
     }
     return {'status': "0", 'text': "İstek gönderimi başarısız"};
